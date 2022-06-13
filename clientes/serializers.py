@@ -15,6 +15,6 @@ class ClienteSerializer(serializers.ModelSerializer):
         if not rg_is_valid(data['rg']):
             raise serializers.ValidationError({'rg': 'The RG might to has 9 digits'})
         if not cellphone_is_valid(data['celular']):
-            raise serializers.ValidationError({'celular': 'The cellphone might to has 11 digits'})
+            raise serializers.ValidationError({'celular': 'The cellphone might follow the XX XXXXX-XXXX format'})
 
         return data
